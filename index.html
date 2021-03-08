@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+    <title>21 week</title>
+</head>
+
+<body>
+    <h1>Search GIF image</h1>
+    <div class="gifs">
+        <input type="text" class="input" placeholder="Type here" />
+        <button type="submit" class="search">Search</button>
+        <div class="images"></div>
+
+        <form>
+            <h2>Регистрация</h2>
+            <label for="userLogin">Логин</label>
+            <input type="text" id="userLogin" required />
+            <label for="userEmail">Почта</label>
+            <input type="email" id="userEmail" required />
+            <label for="password">Пароль</label>
+            <input type="password" id="password" required />
+            <button id="signupBtn" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <form action="https://httpbin.org/post" class="form">
+        <h2>Питомец</h2>
+        <label for="petName">Кличка</label>
+        <input type="text" id="petName" required />
+
+        <h2>Владелец</h2>
+        <label for="name">Имя</label>
+        <input type="text" id="name" required />
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/"
+            minlength="10" maxlength="20" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <h2>Корм</h2>
+        <label for="dry">Сухой</label>
+        <input type="checkbox" id="dry" />
+        <label for="wet">Влажный</label>
+        <input type="checkbox" id="wet" />
+        <label for="natural">Натуральный</label>
+        <input type="checkbox" id="natural" />
+
+        <h2>Пол питомца</h2>
+        <input type="radio" name="s" value="m" /> Самец<br />
+        <input type="radio" name="s" value="f" /> Самка
+
+        <h2>Комментарий владельца</h2>
+        <textarea rows="5" cols="20">Комментарий владельца</textarea>
+
+
+        <br />
+        <button type="button" id="sendForm">Сохранить</button>
+    </form>
+</body>
+
+</html>
