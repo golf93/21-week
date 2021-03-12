@@ -17,11 +17,7 @@ searchBtn.addEventListener("click", () => {
     .catch((error) => console.log(error));
 });
 
-const validate = () => {
-  let login = document.querySelector("#userLogin");
-  let email = document.querySelector("#userEmail");
-  let password = document.querySelector("#password");
-
+const validate = (login, email, password) => {
   let loginFormat = /^[a-z0-9_-]{3,16}$/;
   let mailFormat = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
   let passwordFormat = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/;
@@ -54,7 +50,11 @@ const validate = () => {
 
 signupBtn.onclick = async (e) => {
   e.preventDefault();
-  validate();
+  validate(
+    document.querySelector("#userLogin"),
+    document.querySelector("#userEmail"),
+    document.querySelector("#password")
+  );
   let user = {
     login: document.getElementById("userLogin").value,
     email: document.getElementById("userEmail").value,
